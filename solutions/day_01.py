@@ -1,8 +1,5 @@
-def read_input(file_path):
-    """Read the file and remove trailing newline characters"""
-    with open(file_path, "r") as file:
-        return file.read().splitlines()
-    
+from utils.read_input import read_input
+
 def wrap_number(num):
     """
     Ensure the number is within the range 0-99 inclusive.
@@ -36,8 +33,6 @@ def day_one_part_one():
         else:
             dial_point += int(line[1:])
 
-        print(f"Pre-wrapped dial point: {dial_point}")
-
         # Wrap around if out of bounds (0-99)
         if dial_point < 0 or dial_point > 99:
             dial_point = wrap_number(dial_point)
@@ -45,8 +40,6 @@ def day_one_part_one():
         # Count how many times the dial hits 0
         if dial_point == 0:
             total_zeros += 1
-
-        print(f"Current dial point: {dial_point}")
 
     print(f"Total times dial hit 0: {total_zeros}")
     return total_zeros
