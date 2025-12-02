@@ -1,0 +1,33 @@
+{
+  // ---- General ----
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.pytest_cache": true,
+    "**/.mypy_cache": true
+  },
+  "files.associations": {
+    "*.py": "python"
+  },
+
+  // ---- Python / Poetry ----
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+  "python.terminal.activateEnvironment": true,
+  "python.analysis.typeCheckingMode": "standard",
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.autoSearchPaths": true,
+
+  // ---- Formatting & Linting ----
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "always"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "black-formatter.args": ["--line-length", "88"],
+
+  "ruff.lint.select": ["E", "F", "I"],
+  
+  // ---- Editor UX ----
+  "editor.inlineSuggest.enabled": true
+}
