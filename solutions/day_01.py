@@ -6,22 +6,13 @@ def day_one_part_one():
 
     # Get input and initialize variables
     inp = read_input("solutions/inputs/day_01.txt")
+    inp = [int(line.replace("L", "-").replace("R", "")) for line in inp]
     dial_point = 50
     total_zeros = 0
 
     # Process each instruction
-    for line in inp:
-        # L means turn left (decrease), R means turn right (increase)
-        if line[0] == "L":
-            dial_point -= int(line[1:])
-        else:
-            dial_point += int(line[1:])
-
-        # Wrap around if out of bounds (0-99)
-        if dial_point < 0 or dial_point > 99:
-            dial_point = abs(dial_point % 100)
-
-        # Count how many times the dial hits 0
+    for change in inp:
+        dial_point = (dial_point + change) % 100
         if dial_point == 0:
             total_zeros += 1
 
@@ -30,32 +21,34 @@ def day_one_part_one():
 
 
 def day_one_part_two():
-    """Solve Day 1, Part 1 of the challenge."""
+    """Solve Day 1, Part 2 of the challenge."""
 
     # Get input and initialize variables
     inp = read_input("solutions/inputs/day_01.txt")
+    inp = [int(line.replace("L", "-").replace("R", "")) for line in inp]
     dial_point = 50
     total_zeros = 0
 
     # Process each instruction
-    for line in inp:
-        # L means turn left (decrease), R means turn right (increase)
-        if line[0] == "L":
-            dial_point -= int(line[1:])
+    for change in inp:
+        raw_end = dial_point + change
+
+        # Calculate how many times we passed zero, including wrap to zero
+        if change > 0:
+            zeros_passed = raw_end // 100 - dial_point // 100
         else:
-            dial_point += int(line[1:])
+            zeros_passed = (dial_point - 1) // 100 - (raw_end - 1) // 100
 
-        # Wrap around if out of bounds (0-99)
-        if dial_point < 0 or dial_point > 99:
-            dial_point = abs(dial_point % 100)
+        # Wrap the dial into 0-99
+        dial_point = raw_end % 100
 
-        # Count how many times the dial hits 0
-        if dial_point == 0:
-            total_zeros += 1
+        # Add to total
+        total_zeros += zeros_passed
 
     print(f"Total times dial hit 0 (p2): {total_zeros}")
     return total_zeros
 
 
-day_one_part_one()
-day_one_part_two()
+if __name__ == "__main__":
+    day_one_part_one()
+    day_one_part_two()
