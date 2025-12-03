@@ -205,3 +205,22 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# React / Node.js (client/)
+client/node_modules/
+client/dist/
+client/build/
+client/.env.local
+client/.env.development.local
+client/.env.test.local
+client/.env.production.local
+client/npm-debug.log*
+client/yarn-debug.log*
+client/yarn-error.log*
+client/pnpm-debug.log*
+client/.DS_Store
+client/.eslintcache
+client/.vite/
+client/.turbo/
+client/coverage/
+client/.nyc_output/
