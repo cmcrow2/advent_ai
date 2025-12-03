@@ -9,7 +9,7 @@ def day_one_part_one():
     start_time = time.perf_counter()
 
     # Get input and initialize variables
-    inp = read_input("solutions/inputs/day_01.txt")
+    inp = read_input("tools/inputs/day_01.txt")
     inp = [int(line.replace("L", "-").replace("R", "")) for line in inp]
     dial_point = 50
     total_zeros = 0
@@ -33,7 +33,7 @@ def day_one_part_two():
     start_time = time.perf_counter()
 
     # Get input and initialize variables
-    inp = read_input("solutions/inputs/day_01.txt")
+    inp = read_input("tools/inputs/day_01.txt")
     inp = [int(line.replace("L", "-").replace("R", "")) for line in inp]
     dial_point = 50
     total_zeros = 0

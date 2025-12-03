@@ -9,7 +9,7 @@ def day_two_part_one():
     start_time = time.perf_counter()
 
     # Read and parse input to list of [a, b] pairs
-    inp = read_input("solutions/inputs/day_02.txt")
+    inp = read_input("tools/inputs/day_02.txt")
     inp = str(inp).split(",")
     inp = [list(map(int, pair.split("-"))) for pair in inp]
 
@@ -34,7 +34,7 @@ def day_two_part_two():
     start_time = time.perf_counter()
 
     # Read and parse input to list of [start, end] pairs
-    inp = read_input("solutions/inputs/day_02.txt")
+    inp = read_input("tools/inputs/day_02.txt")
     inp = str(inp).split(",")
     ranges = [list(map(int, pair.split("-"))) for pair in inp]
 
