@@ -24,7 +24,7 @@ def day_two_part_one():
     end_time = time.perf_counter()
 
     print(f"\tInvalid ID sum (p1): {total}")
-    print(f"\tExecution time (p2): {end_time - start_time:.6f} seconds\n")
+    print(f"\tExecution time: {end_time - start_time:.6f} seconds\n")
     return total
 
 
@@ -58,7 +58,7 @@ def day_two_part_two():
     end_time = time.perf_counter()
 
     print(f"\tInvalid ID sum (p2): {total}")
-    print(f"\tExecution time (p2): {end_time - start_time:.6f} seconds\n")
+    print(f"\tExecution time: {end_time - start_time:.6f} seconds\n")
     return total
 
 
